@@ -12,6 +12,9 @@
     "start": "node dist/checkpoints-node.js",
     "test": "node test"
   },
+  "bin": {
+    "crypto-checkpoints": "./bin/index.js"
+  },
   "backed": {
     "bundles": [
       {
