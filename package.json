@@ -1,0 +1,40 @@
+{
+  "name": "crypto-checkpoints",
+  "version": "0.1.0-alpha.1",
+  "description": "The node responible for connecting to the ipfs network.",
+  "main": "dist/checkpoints-node.js",
+  "module": "dist/checkpoints-es.js",
+  "repository": "https://github.com/crypto-io/crypto-checkpoints",
+  "author": "Glenn Vandeuren <vandeurenglenn@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node dist/checkpoints-node.js",
+    "test": "node test"
+  },
+  "backed": {
+    "bundles": [
+      {
+        "src": "src/index.js",
+        "dest": "dist/checkpoints.js",
+        "format": "es"
+      },
+      {
+        "src": "src/index.js",
+        "dest": "dist/checkpoints.js",
+        "format": "cjs"
+      }
+    ],
+    "minify": true
+  },
+  "dependencies": {
+    "crypto-daemon": "^0.1.3",
+    "crypto-io-utils": "^0.1.0-alpha.3",
+    "crypto-logger": "^0.1.0-alpha.7",
+    "download": "^6.2.5",
+    "ipfs-api": "^17.2.4"
+  },
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
