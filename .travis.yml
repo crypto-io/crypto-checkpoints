@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '7'
+- '8'
+- '9'
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - "$(npm config get prefix)/lib/node_modules"
+before_script:
+- npm install -g backed-cli
+- backed -b
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: vandeurenglenn@gmail.com
+  api_key:
+    secure: Co+16/lsHJtQMVxwfYfg2xUIqcjwbupyfH4DFek6RyjLOu+6uZQsXC7KKsaVcZKO91JkRGaerv2Y8xIDDpEOi99bq2KN2lU2HC+jHhohD2VPCcOtnS+QBm8yxpR7SVb9eOSlTT7ZSZdZ+KN3zLFoILYLrI7zSfugFodOU04HsLQPxSWNv+CedZmOIq6L26bngJpntWRRGrlZ3N89Fzb1gvmrnoRAlZP0liHbBRZvi0m5DkFYTvP+C3HdpU+pzQKKXbYx/LqC/vtQY8p56ATbg8XKNFtj08+VmgsLMG5Qp0E/AZubphgib3R1H7lCg0W7HfHMuCJtnWUUfMHOTmsquEbeVC3M9/hZw0FyiVH8vbaYCmJ6sBoyE+GO71Ahwgc9T0I1Sj6e5VRRI0L4IGxae5p54flgYdMlGpX2tjjGvExs2O857pc9GDW22wd9MtaLuFovigtUQoaHKadBVyvbpR/aZNxa3Gglk6IKIa7xkoIXv4tqvBQxET9W7M7m5bpM3zP16uluWIhPZkMkHBJ3VUseijBtTGg7PkIJd+vdMAwjEDYELA1M5GClCD+rnpNEEaBJJQqhDYX3b6KcxgeosJTGXNH6EMN1GMPffA8l+i+NzVzZ0gHXq4rWDJWBh53V6Vi4ESl19n+gf6sWuyO4jQG0n8QZsiwuH3c5etdOgOg=
+  on:
+    tags: true
+    repo: crypto-io/crypto-checkpoints
